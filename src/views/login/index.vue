@@ -13,6 +13,7 @@
           :rules="rules"
           ref="RuleForm"
           class="demo-ruleForm"
+          status-icon
         >
           <el-form-item prop="username">
             <el-input v-model="ruleForm.username" placeholder="请输入用户名">
@@ -22,7 +23,11 @@
             </el-input>
           </el-form-item>
           <el-form-item prop="password">
-            <el-input v-model="ruleForm.password" placeholder="请输入密码">
+            <el-input
+              type="password"
+              v-model="ruleForm.password"
+              placeholder="请输入密码"
+            >
               <template #prefix>
                 <el-icon class="el-input__icon"><Lock /></el-icon>
               </template>
@@ -40,6 +45,7 @@
 import { reactive, ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
+import { ElNotification } from 'element-plus'
 const store = useStore()
 const router = useRouter()
 const RuleForm = ref()
@@ -59,6 +65,10 @@ const dl = () => {
     // console.log(valid)
     if (!valid) return
     await store.dispatch('user/login', ruleForm)
+    ElNotification({
+      message: '登录成功',
+      type: 'success'
+    })
     router.push('/')
   })
 }

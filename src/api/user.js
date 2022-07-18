@@ -6,6 +6,21 @@ const login = (data) => {
     data
   })
 }
+
+const getInfo = () => {
+  return request({
+    url: '/admin/getinfo',
+    method: 'POST'
+  })
+}
+const logout = () => {
+  return request({
+    url: '/admin/logout',
+    method: 'POST'
+  })
+}
 export default {
-  login
+  login,
+  getInfo,
+  logout
 }
