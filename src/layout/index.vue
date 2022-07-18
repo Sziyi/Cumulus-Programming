@@ -32,12 +32,6 @@ import AppHeader from './Header'
   background: #ed46f4;
 }
 .el-main {
-  --el-main-padding: 20px;
-  display: block;
-  flex: 1;
-  flex-basis: auto;
-  overflow: auto;
-  box-sizing: border-box;
-  padding: var(--el-main-padding);
+  background:#f1f1f1b8;
 }
 </style>

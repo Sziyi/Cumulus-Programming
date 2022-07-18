@@ -4,8 +4,9 @@
       active-text-color="#409eff"
       background-color="#fdfdfd"
       class="el-menu-vertical-demo"
-      default-active="2"
+      :default-active="$route.path"
       text-color="#000"
+      router
     >
       <menu-tree v-for="item in data" :key="item" :menu="item"></menu-tree>
     </el-menu>
