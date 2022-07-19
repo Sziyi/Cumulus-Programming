@@ -1,3 +1,5 @@
 export default {
-  token: (state) => state.user.token
+  token: (state) => state.user.token,
+
+  tagsView: (state) => state.tagsview.tags
 }

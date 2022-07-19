@@ -1,5 +1,8 @@
 <template>
-  <el-menu-item v-if="item.child && item.child.length==0" :index="item.path + ''">
+  <el-menu-item
+    v-if="item.child && item.child.length == 0"
+    :index="item.frontpath"
+  >
     <el-icon><el-button type="" text :icon="item.icon"></el-button></el-icon
     ><span>{{ item.name }}</span>
   </el-menu-item>

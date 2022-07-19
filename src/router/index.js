@@ -18,7 +18,7 @@ const routes = [
     component: layout,
     children: [
       {
-        path: '/index',
+        path: 'index',
         name: 'index',
         component: () => import('../views/home'),
         meta: {

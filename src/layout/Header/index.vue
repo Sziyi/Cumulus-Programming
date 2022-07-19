@@ -7,11 +7,25 @@
     <div class="s">
       <el-icon><Fold /></el-icon>
       <el-icon><Expand /></el-icon>
-      <el-icon><Refresh /></el-icon>
+      <el-tooltip
+        cl.ass="box-item"
+        effect="dark"
+        content="刷新"
+        placement="bottom"
+      >
+        <el-icon @click="refresh"> <Refresh /></el-icon>
+      </el-tooltip>
     </div>
     <div class="r">
-      <div class="q">
-        <el-icon><FullScreen /></el-icon>
+      <div class="q" @click="sen">
+        <el-tooltip
+          class="box-item"
+          effect="dark"
+          content="全屏"
+          placement="bottom"
+        >
+          <el-icon><FullScreen /></el-icon>
+        </el-tooltip>
       </div>
       <el-avatar class="t" :size="30" />
       <el-dropdown @command="handleCommand">
@@ -35,7 +49,10 @@
 <script setup>
 import { useStore } from 'vuex'
 import { ElNotification, ElMessageBox } from 'element-plus'
+import screenfull from 'screenfull'
+import { useRouter } from 'vue-router'
 const store = useStore()
+const router = useRouter()
 const handleCommand = (command) => {
   // console.log(command)
   switch (command) {
@@ -71,6 +88,12 @@ const handleLogout = () => {
       })
     })
 }
+const sen = () => {
+  screenfull.toggle()
+}
+const refresh = () => {
+  router.go(0)
+}
 </script>
 
 <style scoped lang="scss">
@@ -94,14 +117,22 @@ const handleLogout = () => {
     font-size: 1rem;
     color: #fff;
     float: left;
+    .el-icon {
+      width: 45px;
+      height: 60px;
+    }
+    .el-icon:hover {
+      background-color: rgb(0, 123, 255);
+    }
   }
   .r {
     width: 200px;
     height: 60px;
     float: right;
     .q {
-      width: 60px;
+      width: 35px;
       height: 60px;
+      margin-left: 25px;
       float: left;
       .el-icon {
         margin: 22px 10px 15px 10px;
@@ -111,7 +142,7 @@ const handleLogout = () => {
     }
 
     .t {
-      margin: 14px 10px 0 0;
+      margin: 14px 10px 0 25px;
       float: left;
     }
     .el-dropdown {
@@ -122,5 +153,9 @@ const handleLogout = () => {
       }
     }
   }
+}
+.q:hover {
+  width: 45px;
+  background-color: rgb(0, 123, 255);
 }
 </style>
