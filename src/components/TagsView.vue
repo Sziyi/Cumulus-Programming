@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tag">
     <ul>
       <li
         v-for="(item, i) in tags"

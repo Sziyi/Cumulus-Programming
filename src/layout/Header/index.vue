@@ -91,6 +91,7 @@ const handleLogout = () => {
 const sen = () => {
   screenfull.toggle()
 }
+// 刷新
 const refresh = () => {
   router.go(0)
 }

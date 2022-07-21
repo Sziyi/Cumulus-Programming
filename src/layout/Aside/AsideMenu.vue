@@ -30,7 +30,7 @@ getMenuList()
 <style scoped lang="scss">
 .aside-menu {
   width: 250px;
-  height: 41.3rem;
+  height: 47.3rem;
   .el-menu {
     border-right: none;
     height: 100%;

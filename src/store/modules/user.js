@@ -30,6 +30,21 @@ export default {
       const response = await UserApi.getInfo()
       // console.log(response)
       return response
+    },
+    async statistics1({ commit }) {
+      const response = await UserApi.statistics1()
+      // console.log(response)
+      return response
+    },
+    async statistics2({ commit }) {
+      const response = await UserApi.statistics2()
+      console.log(response)
+      return response
+    },
+    async goods({ commit }) {
+      const response = await UserApi.goods()
+      console.log(response)
+      return response
     }
   }
 }

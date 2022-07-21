@@ -19,8 +19,30 @@ const logout = () => {
     method: 'POST'
   })
 }
+const statistics1 = () => {
+  return request({
+    url: '/admin/statistics1',
+    method: 'GET'
+  })
+}
+const statistics2 = () => {
+  return request({
+    url: '/admin/statistics2',
+    method: 'GET'
+  })
+}
+const goods = () => {
+  return request({
+    url: '/admin/goods/1?tab=all',
+    method: 'GET'
+  })
+}
+
 export default {
   login,
   getInfo,
-  logout
+  logout,
+  statistics1,
+  statistics2,
+  goods
 }

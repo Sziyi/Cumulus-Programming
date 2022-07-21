@@ -22,16 +22,21 @@ import AppMain from './Main'
 import AppHeader from './Header'
 </script>
 <style scoped lang="scss">
+.common-layout {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 .el-header {
   --el-header-padding: none;
 }
 .el-aside {
   display: flex;
   width: 250px;
-  height: 41.3rem;
-  background: #ed46f4;
+  height: 47.3rem;
+  // background: #ed46f4;
 }
 .el-main {
-  background:#f1f1f1b8;
+  background: #f1f1f1b8;
 }
 </style>
