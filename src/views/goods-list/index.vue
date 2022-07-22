@@ -2,7 +2,7 @@
   <div class="goodsList">
     <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
       <el-tab-pane label="全部" name="first">
-        <el-card shadow="never" style="border: none">
+        <!-- <el-card shadow="never" style="border: none">
           <el-form
             :inline="true"
             :model="form"
@@ -123,9 +123,12 @@
             @current-change="handleCurrentChange"
           />
           <div class="d"></div>
-        </el-card>
+        </el-card> -->
+        <underReview></underReview>
       </el-tab-pane>
-      <el-tab-pane label="审核中" name="second">审核中</el-tab-pane>
+      <el-tab-pane label="审核中" name="second"
+        ><underReview></underReview
+      ></el-tab-pane>
       <el-tab-pane label="出售中" name="third">出售中</el-tab-pane>
       <el-tab-pane label="已下架" name="fourth">已下架</el-tab-pane>
       <el-tab-pane label="库存预警" name="warning">库存预警</el-tab-pane>
@@ -135,67 +138,68 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
-import { useStore } from 'vuex'
+import { ref } from 'vue'
+// import { useStore } from 'vuex'
+import underReview from './under-review'
 // import { useRouter } from 'vue-router'
 // const router = useRouter()
-const size = ref('small')
-const form = reactive({
-  name: '',
-  region: ''
-})
+// const size = ref('small')
+// const form = reactive({
+//   name: '',
+//   region: ''
+// })
 const activeName = ref('first')
-const data = ref([])
+// const data = ref([])
 
-const store = useStore()
+// const store = useStore()
 // 标签页
 const handleClick = () => {
   console.log('123')
 }
-const goods = async () => {
-  const res = await store.dispatch('user/goods')
-  console.log(res)
-  data.value = res.data.list
-}
-goods()
+// const goods = async () => {
+//   const res = await store.dispatch('user/goods')
+//   console.log(res)
+//   data.value = res.data.list
+// }
+// goods()
 
-const sx = () => {
-  // router.go(0)
-  goods()
-}
-const handleSizeChange = (size) => {
-  console.log(size)
-}
-const handleCurrentChange = (num) => {
-  console.log(num)
-}
+// const sx = () => {
+//   // router.go(0)
+//   goods()
+// }
+// const handleSizeChange = (size) => {
+//   console.log(size)
+// }
+// const handleCurrentChange = (num) => {
+//   console.log(num)
+// }
 </script>
 <style scoped lang="scss">
 .el-tabs {
   margin-top: 20px;
 }
-.btn {
-  float: right;
-}
-.img {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-}
-.button {
-  .el-button {
-    border: none;
-  }
-}
-.price {
-  margin-left: 13px;
-}
-.icon {
-  float: right;
-  font-size: 20px;
-}
-.d {
-  width: 100%;
-  height: 4000px;
-}
+// .btn {
+//   float: right;
+// }
+// .img {
+//   width: 50px;
+//   height: 50px;
+//   border-radius: 5px;
+// }
+// .button {
+//   .el-button {
+//     border: none;
+//   }
+// }
+// .price {
+//   margin-left: 13px;
+// }
+// .icon {
+//   float: right;
+//   font-size: 20px;
+// }
+// .d {
+//   width: 100%;
+//   height: 4000px;
+// }
 </style>

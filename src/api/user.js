@@ -37,6 +37,12 @@ const goods = () => {
     method: 'GET'
   })
 }
+const getclassify = () => {
+  return request({
+    url: '/admin/category',
+    method: 'GET'
+  })
+}
 
 export default {
   login,
@@ -44,5 +50,6 @@ export default {
   logout,
   statistics1,
   statistics2,
-  goods
+  goods,
+  getclassify
 }

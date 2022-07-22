@@ -45,6 +45,11 @@ export default {
       const response = await UserApi.goods()
       console.log(response)
       return response
+    },
+    async getsort({ commit }) {
+      const response = await UserApi.getclassify()
+      console.log(response)
+      return response
     }
   }
 }
