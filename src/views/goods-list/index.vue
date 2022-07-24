@@ -124,15 +124,23 @@
           />
           <div class="d"></div>
         </el-card> -->
+        <all></all>
+      </el-tab-pane>
+      <el-tab-pane label="审核中" name="second">
         <underReview></underReview>
       </el-tab-pane>
-      <el-tab-pane label="审核中" name="second"
-        ><underReview></underReview
-      ></el-tab-pane>
-      <el-tab-pane label="出售中" name="third">出售中</el-tab-pane>
-      <el-tab-pane label="已下架" name="fourth">已下架</el-tab-pane>
-      <el-tab-pane label="库存预警" name="warning">库存预警</el-tab-pane>
-      <el-tab-pane label="回收站" name="bin">回收站</el-tab-pane>
+      <el-tab-pane label="出售中" name="third">
+        <onSale></onSale>
+      </el-tab-pane>
+      <el-tab-pane label="已下架" name="fourth">
+        <removed></removed>
+      </el-tab-pane>
+      <el-tab-pane label="库存预警" name="warning">
+        <warehouseWarning></warehouseWarning>
+      </el-tab-pane>
+      <el-tab-pane label="回收站" name="bin">
+        <recycleBin></recycleBin>
+      </el-tab-pane>
     </el-tabs>
   </div>
 </template>
@@ -140,7 +148,13 @@
 <script setup>
 import { ref } from 'vue'
 // import { useStore } from 'vuex'
-import underReview from './under-review'
+import all from './All'
+import underReview from './underReview'
+import onSale from './onSale'
+import removed from './removed'
+import warehouseWarning from './warehouseWarning'
+import recycleBin from './recycleBin'
+
 // import { useRouter } from 'vue-router'
 // const router = useRouter()
 // const size = ref('small')

@@ -30,7 +30,6 @@
       </el-form>
       <el-button type="primary" :size="size" @click="add">新增</el-button>
       <el-button :size="size" type="danger">批量删除</el-button>
-      <el-button :size="size">上架</el-button>
       <el-button :size="size">下架</el-button>
       <el-tooltip
         class="box-item"
@@ -207,17 +206,17 @@ const store = useStore()
 const total = ref('')
 const currentPage3 = ref(1)
 const pageSize3 = ref(10)
-const goods = async () => {
-  const res = await store.dispatch('user/goods')
-  console.log(res)
+const onSale = async () => {
+  const res = await store.dispatch('user/onSale')
+  //   console.log(res)
   data.value = res.data.list
   total.value = res.data.totalCount
 }
-goods()
+onSale()
 
 const sx = () => {
   // router.go(0)
-  goods()
+  onSale()
 }
 const handleSizeChange = (size) => {
   //   pageSize3 = size
@@ -266,5 +265,9 @@ const add = () => {
 }
 .el-icon.avatar-uploader-icon:hover {
   background-color: rgb(195, 193, 193);
+}
+
+.demo-drawer__footer {
+  margin-top: 400px;
 }
 </style>
