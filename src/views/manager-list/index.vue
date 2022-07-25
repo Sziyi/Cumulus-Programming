@@ -30,7 +30,7 @@
         style="width: 100%; margin-top: 30px"
         v-loading="loading"
       >
-        <el-table-column label="管理员" width="150">
+        <el-table-column label="管理员">
           <template #default="scope">
             <div style="display: flex; align-items: center">
               <el-avatar :size="60" src="https://empty" @error="errorHandler">
@@ -43,8 +43,8 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column property="role.name" label="所属角色" width="130" />
-        <el-table-column label="状态" width="130">
+        <el-table-column property="role.name" label="所属角色"/>
+        <el-table-column label="状态">
           <el-switch>
             <template #default="scope">
               {{ scope.row.status === '0' ? true : false }}

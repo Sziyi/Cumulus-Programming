@@ -37,11 +37,18 @@ const skus = () => {
     method: 'GET'
   })
 }
+const coupon = () => {
+  return request({
+    url: '/admin/coupon/1',
+    method: 'GET'
+  })
+}
 export default {
   underReview,
   onSale,
   removed,
   waring,
   recycleBin,
-  skus
+  skus,
+  coupon
 }

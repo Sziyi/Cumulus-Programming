@@ -79,6 +79,11 @@ export default {
       // console.log(response)
       return response
     },
+    async coupon({ commit }) {
+      const response = await CommodityApi.coupon()
+      // console.log(response)
+      return response
+    },
     async getsort({ commit }) {
       const response = await UserApi.getclassify()
       // console.log(response)
